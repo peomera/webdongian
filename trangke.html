@@ -10,5 +10,23 @@ href="style.css">
     <h1>Xin chao! day la trang ke</h1>
     <p>chao mung dent trang ke thanh cong</p>
     <a href="index.html" class="next-button">quay lai</a>
+    <button onclick="enableAdmin()">Tôi là Admin</button>
+
+<script>
+  function enableAdmin() {
+    const password = prompt("Nhập mật khẩu admin:");
+    if (password === "1234") {
+      alert("Chế độ admin được bật. Bạn có thể chỉnh sửa văn bản.");
+      
+      // Cho phép sửa nội dung trang
+      document.body.contentEditable = "true";
+      document.designMode = "on";
+    } else {
+      alert("Sai mật khẩu!");
+    }
+  }
+</script>
+
 </body>
 </html>
+
