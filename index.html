@@ -13,15 +13,30 @@
     <a href="trangpre.html" class="pre-button">pre</a>
     <div class="image-contaier">
     <img src="anhmeo.jpg" alt ="anh vui" width="100" height="100">
-    <div id="comment-section">
-  <h3>Bình luận</h3>
-  <textarea id="comment-input" placeholder="Viết bình luận..."></textarea>
-  <button onclick="postComment()">Gửi</button>
-  <div id="comments"></div>
-</div>
+    <h3>Bình luận</h3>
+    <textarea id="commentInput" placeholder="Nhập bình luận..."></textarea><br>
+    <button onclick="postComment()">Gửi</button>
 
+    <div id="commentList"></div>
+
+    <!-- Script xử lý bình luận -->
+    <script>
+        function postComment() {
+            const input = document.getElementById("commentInput");
+            const commentText = input.value.trim();
+
+            if (commentText !== "") {
+                const p = document.createElement("p");
+                p.textContent = commentText;
+                document.getElementById("commentList").appendChild(p);
+                input.value = "";
+            }
+        }
+    </script>
+      
 </body>
 </html>
+
 
 
 
